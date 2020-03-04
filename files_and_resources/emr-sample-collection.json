@@ -1,0 +1,90 @@
+{
+"viralloadManifest":{
+"manifestId":"U78W8W88W",
+"sampleInformation":
+[
+{
+ "patientId":[
+  {
+  "IDNumber":"FCT/98/03003",
+  "IDTypeCode":"CLIENTID"
+  },
+  {
+  "IDNumber":"FT98103003",
+  "IDTypeCode":"RECENT"
+  },
+  {
+  "IDNumber":"FCT/98/03003",
+  "IDTypeCode":"HOSPITALNO"
+  }
+  ],
+"firstname":"John",
+"firstname":"John",
+"surname":"Doe",
+"sex":"m/f",
+"pregnantBreastfeadingStatus":"p/b/np",
+"age":32,
+"dob":"dd-mm-yyyy",
+"facilityID": "qwertyiop",
+"labID":"LIMS-001-09",
+"sampleID":"mnbvcxz",
+"sampleType":"dbs",
+"indicationVLTest":"",
+"artCommencementDate":"dd-mm-yyyy",
+"drugRegimen":"AZT-3TC-2F",
+"sampleOrderedBy":"Frankenstein",
+"sampleOrderDate":"dd-mm-yyyy",
+"sampleCollectedBy":"Igor",
+"sampleCollectionDate":"dd-mm-yyyy",
+"sampleCollectionTime":"YYYY-MM-DDTHH:mm:ss.sssZ",
+"dateSampleSent":"dd-mm-yyyy"
+}
+]
+
+},
+"eidManifest":{
+"manifestId":"U78W8W88W",
+"sampleInformation":
+[
+{
+ "patientId":[
+  {
+  "IDNumber":"FCT/98/03003",
+  "IDTypeCode":"CLIENTID"
+  },
+  {
+  "IDNumber":"FT98103003",
+  "IDTypeCode":"RECENT"
+  },
+  {
+  "IDNumber":"FCT/98/03003",
+  "IDTypeCode":"HOSPITALNO"
+  }
+  ],
+"firstname":"John",
+"firstname":"John",
+"surname":"Doe",
+"sex":"m/f",
+"pregnantBreastfeadingStatus":"p/b/np",
+"age":32,
+"dob":"dd-mm-yyyy",
+"facilityID": "qwertyiop",
+"labID":"LIMS-001-09",
+"sampleID":"mnbvcxz",
+"sampleType":"dbs",
+"indicationVLTest":"",
+"artCommencementDate":"dd-mm-yyyy",
+"drugRegimen":"AZT-3TC-2F",
+"sampleOrderedBy":"Frankenstein",
+"sampleOrderDate":"dd-mm-yyyy",
+"sampleCollectedBy":"Igor",
+"sampleCollectionDate":"dd-mm-yyyy",
+"sampleCollectionTime":"YYYY-MM-DDTHH:mm:ss.sssZ",
+"dateSampleSent":"dd-mm-yyyy",
+"reasonForEID":""
+}
+]
+
+}
+}
+
