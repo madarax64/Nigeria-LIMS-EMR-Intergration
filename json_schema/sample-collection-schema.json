@@ -65,7 +65,7 @@
                   "type": "string"
                 },
                 "indicationVLTest": {
-                  "type": "string"
+                  "type": "integer"
                 },
                 "artCommencementDate": {
                   "type": "string"
@@ -83,13 +83,13 @@
                   "type": "string"
                 },
                 "sampleCollectionDate": {
-                  "type": "string"
+                  "type": "date"
                 },
                 "sampleCollectionTime": {
-                  "type": "string"
+                  "type": "date-time"
                 },
                 "dateSampleSent": {
-                  "type": "string"
+                  "type": "date"
                 }
               },
               "required": [
@@ -163,14 +163,11 @@
                 "sex": {
                   "type": "string"
                 },
-                "pregnantBreastfeadingStatus": {
-                  "type": "string"
-                },
                 "age": {
                   "type": "integer"
                 },
                 "dob": {
-                  "type": "string"
+                  "type": "date"
                 },
                 "facilityID": {
                   "type": "string"
@@ -197,19 +194,19 @@
                   "type": "string"
                 },
                 "sampleOrderDate": {
-                  "type": "string"
+                  "type": "date"
                 },
                 "sampleCollectedBy": {
                   "type": "string"
                 },
                 "sampleCollectionDate": {
-                  "type": "string"
+                  "type": "date"
                 },
                 "sampleCollectionTime": {
-                  "type": "string"
+                  "type": "date-time"
                 },
                 "dateSampleSent": {
-                  "type": "string"
+                  "type": "date"
                 },
                 "reasonForEID": {
                   "type": "string"
