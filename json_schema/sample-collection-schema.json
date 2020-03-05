@@ -1,0 +1,254 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "viralloadManifest": {
+      "type": "object",
+      "properties": {
+        "manifestId": {
+          "type": "string"
+        },
+        "sampleInformation": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "patientId": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "IDNumber": {
+                          "type": "string"
+                        },
+                        "IDTypeCode": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "IDNumber",
+                        "IDTypeCode"
+                      ]
+                    }
+                  ]
+                },
+                "firstname": {
+                  "type": "string"
+                },
+                "surname": {
+                  "type": "string"
+                },
+                "sex": {
+                  "type": "string"
+                },
+                "pregnantBreastfeadingStatus": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "integer"
+                },
+                "dob": {
+                  "type": "string"
+                },
+                "facilityID": {
+                  "type": "string"
+                },
+                "labID": {
+                  "type": "string"
+                },
+                "sampleID": {
+                  "type": "string"
+                },
+                "sampleType": {
+                  "type": "string"
+                },
+                "indicationVLTest": {
+                  "type": "string"
+                },
+                "artCommencementDate": {
+                  "type": "string"
+                },
+                "drugRegimen": {
+                  "type": "string"
+                },
+                "sampleOrderedBy": {
+                  "type": "string"
+                },
+                "sampleOrderDate": {
+                  "type": "string"
+                },
+                "sampleCollectedBy": {
+                  "type": "string"
+                },
+                "sampleCollectionDate": {
+                  "type": "string"
+                },
+                "sampleCollectionTime": {
+                  "type": "string"
+                },
+                "dateSampleSent": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "patientId",
+                "firstname",
+                "surname",
+                "sex",
+                "age",
+                "dob",
+                "facilityID",
+                "labID",
+                "sampleID",
+                "sampleType",
+                "indicationVLTest",
+                "artCommencementDate",
+                "drugRegimen",
+                "sampleOrderedBy",
+                "sampleOrderDate",
+                "sampleCollectedBy",
+                "sampleCollectionDate",
+                "sampleCollectionTime",
+                "dateSampleSent"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "manifestId",
+        "sampleInformation"
+      ]
+    },
+    "eidManifest": {
+      "type": "object",
+      "properties": {
+        "manifestId": {
+          "type": "string"
+        },
+        "sampleInformation": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "patientId": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "IDNumber": {
+                          "type": "string"
+                        },
+                        "IDTypeCode": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "IDNumber",
+                        "IDTypeCode"
+                      ]
+                    }
+                  ]
+                },
+                "firstname": {
+                  "type": "string"
+                },
+                "surname": {
+                  "type": "string"
+                },
+                "sex": {
+                  "type": "string"
+                },
+                "pregnantBreastfeadingStatus": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "integer"
+                },
+                "dob": {
+                  "type": "string"
+                },
+                "facilityID": {
+                  "type": "string"
+                },
+                "labID": {
+                  "type": "string"
+                },
+                "sampleID": {
+                  "type": "string"
+                },
+                "sampleType": {
+                  "type": "string"
+                },
+                "indicationVLTest": {
+                  "type": "string"
+                },
+                "artCommencementDate": {
+                  "type": "string"
+                },
+                "drugRegimen": {
+                  "type": "string"
+                },
+                "sampleOrderedBy": {
+                  "type": "string"
+                },
+                "sampleOrderDate": {
+                  "type": "string"
+                },
+                "sampleCollectedBy": {
+                  "type": "string"
+                },
+                "sampleCollectionDate": {
+                  "type": "string"
+                },
+                "sampleCollectionTime": {
+                  "type": "string"
+                },
+                "dateSampleSent": {
+                  "type": "string"
+                },
+                "reasonForEID": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "patientId",
+                "firstname",
+                "surname",
+                "sex",
+                "age",
+                "dob",
+                "facilityID",
+                "labID",
+                "sampleID",
+                "sampleType",
+                "indicationVLTest",
+                "artCommencementDate",
+                "drugRegimen",
+                "sampleOrderedBy",
+                "sampleOrderDate",
+                "sampleCollectedBy",
+                "sampleCollectionDate",
+                "sampleCollectionTime",
+                "dateSampleSent",
+                "reasonForEID"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "manifestId",
+        "sampleInformation"
+      ]
+    }
+  },
+  "required": [
+    "viralloadManifest",
+    "eidManifest"
+  ]
+}
