@@ -1,0 +1,33 @@
+{
+    "viralLoadManifest": {
+        "manifestID": "1234567890",
+        "sendingFacilityID": "0987654321",
+        "sendingFacilityName": "Silent Hill",
+        "receivingLabID": "1234567890",
+        "receivingLabName": "Frankenstein and Sons PCR Lab",
+        "sampleInformation": [
+            {
+                "patientID": [
+                    {
+                        "idNumber": "1234567811",
+                        "idTypeCode": "RECENCY"
+                    }
+                ],
+                "firstName": "John",
+                "surName": "Doe",
+                "sex": "M",
+                "age": 34,
+                "dateOfBirth": "1990-09-09",
+                "sampleID": "1234567890",
+                "sampleType": "WB",
+                "indicationVLTest": 6,
+                "sampleOrderedBy": "John Constantine",
+                "sampleOrderDate": "2020-03-09",
+                "sampleCollectedBy": "Igor",
+                "sampleCollectionDate": "2020-03-09",
+                "sampleCollectionTime": "2018-11-13T20:20:39+00:00",
+                "dateSampleSent": "2020-03-09"
+            }
+        ]
+    }
+}

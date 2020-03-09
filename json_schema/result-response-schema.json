@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "manifestID",
+        "receivingPCRLab",
+        "viralLoadTestReport"
+    ],
+    "properties": {
+        "manifestID": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 10,
+            "description": "The manifest ID of the returned result"
+        },
+        "receivingPCRLab": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 30,
+            "description": "The identifier (e.g LIMS ID) of the PCR lab returning these results"
+        },
+        "viralLoadTestReport": {
+            "type": "array",
+            "minItems": 1,
+            "description": "The object containing a list of results, each item a result for a samples in that batch",
+            "items": {
+                "type": "object",
+                "title": "",
+                "description": "",
+                "required": [
+                    "laboratoryRegistrationNumber",
+                    "pcrLabSampleNumber",
+                    "visitDate",
+                    "dateSampleReceivedAtPCRLab",
+                    "testResult",
+                    "resultDate",
+                    "assayDate",
+                    "approvalDate",
+                    "dateResultDispatched",
+                    "sampleStatus",
+                    "sampleTestable"
+                ],
+                "properties": {
+                    "laboratoryRegistrationNumber": {
+                        "type": "string",
+                        "minLength": 10,
+                        "maxLength": 20,
+                        "description": "The registration number of the sample i.e Sample ID"
+                    },
+                    
+                    "pcrLabSampleNumber": {
+                        "type": "string",
+                        "minLength": 10,
+                        "maxLength": 20,
+                        "description": "The sample number of this sample as assigned in the PCR lab"
+                    },
+                    "visitDate": {
+                        "type": "string",
+                        "description": "Visit Date",
+                        "format": "date"
+                    },
+                    "dateSampleReceivedAtPCRLab": {
+                        "type": "string",
+                        "description": "The date the  sample was received at the PCR lab",
+                        "format": "date"
+                    },
+                    "testResult": {
+                        "type": "integer",
+                        "description": "Actual Test Result, specifying the VL suppression status",
+                        "minimum": 1,
+                        "maximum": 4,
+                        "enum": [1,2,3,4]
+                    },
+                    "resultDate": {
+                        "type": "string",
+                        "description": "Result date",
+                        "format": "date"
+                    },
+                    "assayDate": {
+                        "type": "string",
+                        "description": "The date the sample was actually tested",
+                        "format": "date"
+                    },
+                    "approvalDate": {
+                        "type": "string",
+                        "description": "The date the result was approved",
+                        "format": "date"
+                    },
+                    "dateResultDispatched": {
+                        "type": "string",
+                        "description": "The date the EMR pulled the result from LIMS. ",
+                        "format": "date"
+                    },
+                    "sampleStatus": {
+                        "type": "integer",
+                        "description": "A status code specifying the state of the sample",
+                        "minimum": 1,
+                        "maximum": 4,
+                        "default":3,
+                        "enum": [1,2,3,4]
+                    },
+                    "sampleTestable": {
+                        "type": "boolean",
+                        "description": "A field specifying if the sample is valid or rejected"
+                    }
+                }
+            }
+        }
+    }
+}

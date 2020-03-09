@@ -1,0 +1,19 @@
+{
+    "manifestID": "111111111!",
+    "receivingPCRLab": "111111111111",
+    "viralLoadTestReport": [
+        {
+            "laboratoryRegistrationNumber": "1111111111111",
+            "pcrLabSampleNumber": "11111111111",
+            "visitDate": "2019-09-09",
+            "dateSampleReceivedAtPCRLab": "2019-09-09",
+            "testResult": 1,
+            "resultDate": "2019-09-09",
+            "assayDate": "2019-09-09",
+            "approvalDate": "2019-12-12",
+            "dateResultDispatched": "2019-09-09",
+            "sampleStatus": 1,
+            "sampleTestable": true
+        }
+    ]
+}

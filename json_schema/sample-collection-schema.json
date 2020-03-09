@@ -1,12 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EMR Sample Registration Request",
   "type": "object",
   "properties": {
-    "viralloadManifest": {
+    "viralLoadManifest": {
       "type": "object",
       "properties": {
-        "manifestId": {
-          "type": "string"
+        "manifestID": {
+          "type": "string",
+          "minLength":10,
+          "maxLength":10
+        },
+        "sendingFacilityID": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 20
+        },
+        "sendingFacilityName": {
+          "type":"string",
+          "minLength":5,
+          "maxLength": 30
+        },
+        "receivingLabID": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 20
+        },
+        "receivingLabName": {
+          "type":"string",
+          "minLength":10,
+          "maxLength": 30
         },
         "sampleInformation": {
           "type": "array",
@@ -14,98 +37,127 @@
             {
               "type": "object",
               "properties": {
-                "patientId": {
+                
+                "patientID": {
                   "type": "array",
+                  "minItems":1,
+                  "uniqueItems": true,
                   "items": [
                     {
                       "type": "object",
                       "properties": {
-                        "IDNumber": {
-                          "type": "string"
+                        "idNumber": {
+                          "type": "string",
+                          "minLength":10,
+                          "maxLength":10
                         },
-                        "IDTypeCode": {
-                          "type": "string"
+                        "idTypeCode": {
+                          "type": "string",
+                          "minLength":6,
+                          "maxLength":15,
+                          "enum": ["HOSPITALNO", "RECENCY", "CLIENTID"]
                         }
                       },
                       "required": [
-                        "IDNumber",
-                        "IDTypeCode"
+                        "idNumber",
+                        "idTypeCode"
                       ]
                     }
                   ]
                 },
-                "firstname": {
-                  "type": "string"
+                "firstName": {
+                  "type": "string",
+				          "minLength": 2,
+				          "maxLength": 32
                 },
-                "surname": {
-                  "type": "string"
+                "surName": {
+                  "type": "string",
+				          "minLength": 2,
+				          "maxLength": 32
                 },
                 "sex": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 1,
+                  "maxLength": 1,
+                  "enum": ["F", "M", "N", "U"]
                 },
-                "pregnantBreastfeadingStatus": {
-                  "type": "string"
+                "pregnantBreastFeedingStatus": {
+                  "type": "string",
+				          "minLength": 1,
+                  "maxLength": 1,
+                  "enum": ["1","2","3","4"]
                 },
                 "age": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 200
                 },
-                "dob": {
-                  "type": "string"
-                },
-                "facilityID": {
-                  "type": "string"
-                },
-                "labID": {
-                  "type": "string"
+                "dateOfBirth": {
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleID": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 10,
+				          "maxLength": 20
                 },
                 "sampleType": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 2,
+                  "maxLength": 3,
+                  "enum": ["DBS","WB"]
                 },
                 "indicationVLTest": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
                 },
                 "artCommencementDate": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "date"
                 },
                 "drugRegimen": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 15
                 },
                 "sampleOrderedBy": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 20
                 },
                 "sampleOrderDate": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleCollectedBy": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 20
                 },
                 "sampleCollectionDate": {
-                  "type": "date"
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleCollectionTime": {
-                  "type": "date-time"
+                  "type": "string",
+                  "format": "date-time"
                 },
                 "dateSampleSent": {
-                  "type": "date"
+                  "type": "string",
+                  "format": "date"
                 }
               },
               "required": [
-                "patientId",
-                "firstname",
-                "surname",
+                "patientID",
+                "firstName",
+                "surName",
                 "sex",
                 "age",
-                "dob",
-                "facilityID",
-                "labID",
+                "dateOfBirth",
                 "sampleID",
                 "sampleType",
                 "indicationVLTest",
-                "artCommencementDate",
-                "drugRegimen",
                 "sampleOrderedBy",
                 "sampleOrderDate",
                 "sampleCollectedBy",
@@ -118,15 +170,42 @@
         }
       },
       "required": [
-        "manifestId",
+        "manifestID",
+        "sendingFacilityID",
+        "sendingFacilityName",
+        "receivingLabID",
+        "receivingLabName",
         "sampleInformation"
       ]
     },
-    "eidManifest": {
+
+    "eidManifest":  {
       "type": "object",
       "properties": {
-        "manifestId": {
-          "type": "string"
+        "manifestID": {
+          "type": "string",
+          "minLength":10,
+          "maxLength":10
+        },
+        "sendingFacilityID": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 20
+        },
+        "sendingFacilityName": {
+          "type":"string",
+          "minLength":5,
+          "maxLength": 30
+        },
+        "receivingLabID": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 20
+        },
+        "receivingLabName": {
+          "type":"string",
+          "minLength":10,
+          "maxLength": 30
         },
         "sampleInformation": {
           "type": "array",
@@ -134,118 +213,147 @@
             {
               "type": "object",
               "properties": {
-                "patientId": {
+                
+                "patientID": {
                   "type": "array",
+                  "minItems":1,
+                  "uniqueItems": true,
                   "items": [
                     {
                       "type": "object",
                       "properties": {
-                        "IDNumber": {
-                          "type": "string"
+                        "idNumber": {
+                          "type": "string",
+                          "minLength":10,
+                          "maxLength":10
                         },
-                        "IDTypeCode": {
-                          "type": "string"
+                        "idTypeCode": {
+                          "type": "string",
+                          "minLength":6,
+                          "maxLength":15,
+                          "enum": ["HOSPITALNO", "RECENCY", "CLIENTID"]
                         }
                       },
                       "required": [
-                        "IDNumber",
-                        "IDTypeCode"
+                        "idNumber",
+                        "idTypeCode"
                       ]
                     }
                   ]
                 },
-                "firstname": {
-                  "type": "string"
+                "firstName": {
+                  "type": "string",
+				          "minLength": 2,
+				          "maxLength": 32
                 },
-                "surname": {
-                  "type": "string"
+                "surName": {
+                  "type": "string",
+				          "minLength": 2,
+				          "maxLength": 32
                 },
                 "sex": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 1,
+                  "maxLength": 1,
+                  "enum": ["F", "M", "N", "U"]
+                },
+                "pregnantBreastFeedingStatus": {
+                  "type": "string",
+				          "minLength": 1,
+                  "maxLength": 1,
+                  "enum": ["1","2","3","4"]
                 },
                 "age": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 200
                 },
-                "dob": {
-                  "type": "date"
-                },
-                "facilityID": {
-                  "type": "string"
-                },
-                "labID": {
-                  "type": "string"
+                "dateOfBirth": {
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleID": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 10,
+				          "maxLength": 20
                 },
                 "sampleType": {
-                  "type": "string"
+                  "type": "string",
+				          "minLength": 2,
+                  "maxLength": 3,
+                  "enum": ["DBS","WB"]
                 },
-                "indicationVLTest": {
-                  "type": "string"
+                "indicationEIDTest": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
                 },
                 "artCommencementDate": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "date"
                 },
                 "drugRegimen": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 15
                 },
                 "sampleOrderedBy": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 20
                 },
                 "sampleOrderDate": {
-                  "type": "date"
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleCollectedBy": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength":3,
+                  "maxLength": 20
                 },
                 "sampleCollectionDate": {
-                  "type": "date"
+                  "type": "string",
+                  "format": "date"
                 },
                 "sampleCollectionTime": {
-                  "type": "date-time"
+                  "type": "string",
+                  "format": "date-time"
                 },
                 "dateSampleSent": {
-                  "type": "date"
-                },
-                "reasonForEID": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "date"
                 }
               },
               "required": [
-                "patientId",
-                "firstname",
-                "surname",
+                "patientID",
+                "firstName",
+                "surName",
                 "sex",
                 "age",
-                "dob",
-                "facilityID",
-                "labID",
+                "dateOfBirth",
                 "sampleID",
                 "sampleType",
-                "indicationVLTest",
-                "artCommencementDate",
-                "drugRegimen",
+                "indicationEIDTest",
                 "sampleOrderedBy",
                 "sampleOrderDate",
                 "sampleCollectedBy",
                 "sampleCollectionDate",
                 "sampleCollectionTime",
-                "dateSampleSent",
-                "reasonForEID"
+                "dateSampleSent"
               ]
             }
           ]
         }
       },
       "required": [
-        "manifestId",
+        "manifestID",
+        "sendingFacilityID",
+        "sendingFacilityName",
+        "receivingLabID",
+        "receivingLabName",
         "sampleInformation"
       ]
     }
   },
-  "required": [
-    "viralloadManifest",
-    "eidManifest"
-  ]
+  "required": []
 }

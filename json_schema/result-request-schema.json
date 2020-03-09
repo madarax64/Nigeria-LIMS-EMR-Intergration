@@ -1,0 +1,28 @@
+{
+  "$id": "rrequest.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EMR_Request_Result",
+  "type": "object",
+  "description": "The schema describing EMR requests for results. Definitions for facilityID, testType and manifestID should be based on those from sample collection schema and the data dictionary.",
+  "properties": {
+  "facilityID": {
+      "type": "string",
+      "description": "Facility Unique Identifier",
+	    "minLength": 10,
+	    "maxLength": 20
+    },
+	"testType": {
+      "type": "string",
+      "description": "Type of test whose results are being requested",
+	    "minLength": 2,
+      "maxLength": 3,
+      "enum": ["VL", "EID"]
+    },
+    "manifestID": {
+      "description": "Manifest ID",
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10
+    }
+  }
+}
